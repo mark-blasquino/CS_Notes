@@ -19,3 +19,15 @@ csRaindrops(30) -> "PlingPlang"
 csRaindrops(34) -> "34"
 34 is not factored by 3, 5, or 7.
 """
+
+def csRaindrops(number):
+    output = ''
+    if number % 3 == 0:
+        output += 'Pling'
+    if number % 5 == 0:
+        output += 'Plang'
+    if number % 7 == 0:
+        output += 'Plong'
+    if output is '':
+        return str(number)
+    return output

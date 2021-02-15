@@ -16,8 +16,9 @@ numbers) but have the property that they don't have a + or - sign associated
 with them. Thus they are always non-negative (zero or positive). We use uint's
 when we know the value we are counting will always be non-negative."
 
-***
+*** python handy functions:
 bin function is converting dec to binary
+add '0b' to a binary number to convert to int
 """
 def hamming_weight(n):
     # Your code here
