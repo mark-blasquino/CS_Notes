@@ -15,6 +15,6 @@ The input integer will not be negative.
 def csReverseIntegerBits(n):
     result = 0
     while n:
-        result = (result << 1) + (n & 1)
+        result = (result << 1) + (n & 1) ## << is left shift by 1
         n >>= 1
     return result

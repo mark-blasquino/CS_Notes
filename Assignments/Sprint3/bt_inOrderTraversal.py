@@ -32,4 +32,4 @@ def binaryTreeInOrderTraversal(root):
         res = binaryTreeInOrderTraversal(root.left)
         res.append(root.value)
         res = res + binaryTreeInOrderTraversal(root.right)
-    return res
+    return res 
