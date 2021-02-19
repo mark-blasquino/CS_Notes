@@ -1,0 +1,107 @@
+'''
+This is your coding interview problem for today.
+​
+This problem was asked by Square.
+​
+Given a list of words, return the shortest unique prefix of each word. For example, given the list:
+​
+dog
+cat
+apple
+apricot
+fish
+Return the list:
+​
+d
+c
+app
+apr
+f
+'''
+​
+​
+# Understanding
+"""
+input: list of string
+output: list of string string
+assumptions_of_input: 
+    word length is at least 3
+    all words are lowercase
+    all words are words
+​
+    
+assumptions_of_output:
+    prefix is at min length 1
+        -what determines this?
+​
+    prefix is at max length 3
+        -what determines this?
+​
+    prefix is at average True
+        -what determines this?
+"""
+​
+# Planning
+"""
+what do we know about lists?
+    -they are iterable
+    - they hold any type
+    - they index access only sequentially
+    
+what do we know about this list?
+    - the data is string
+    - length is at least one
+​
+what do we know about strings?
+    - they are iterable
+    - they are mutable
+​
+what can we do about these strings?
+    - get the length
+    - choose specific chars
+​
+what rules can we apply to this list?
+    - we can sort the list
+    - we can copy the list
+​
+what rules can we apply to the strings?
+    - we can derive a new string from the old string
+​
+what rules can we apply to list of strings?
+    - only copy needed new string
+​
+what else can we think of that might be a problem?
+    - if word length greater than one but less than three
+​
+what would be an ideal time complexity of this plan?
+    - if we are iterating over a list we reach O(n)
+    - if we store any values that is also O(n)
+    - if we are sorting that is an O(n)
+    
+what would be an ideal space complexity of this plan?
+    - if we are storing any values that is O(n)
+​
+"""
+​
+# Execution
+"""
+what should our code example do?
+    - it should return a string of length 1 at min
+    - it should return a string of length 3 at max
+    - it should return a new list (not a mutated list)
+    - it should count string length
+    
+what should our code example need to do its job?
+    - it should have a place to hold a new list
+    - it should have have a counter
+"""
+​
+# Refactoring/Reflecting
+"""
+what ways can we make this code example better?
+    - we can make in-place adjustments if we accept the risks
+    - we can think of more corner cases if we need to maintain a special use case
+    - we can use other means of getting prefix besides if length of string is x or greater
+    - we can try to solve the problem in fewer steps
+​
+"""
