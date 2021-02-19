@@ -27,7 +27,8 @@ the maximum profit is prices[1] - prices[0] = 100 - 3 = 97.
 def buyAndSellStock(prices):
     max_profit_val, current_max_val = 0, 0 
     for price in reversed(prices):                       
-        current_max_val = max(current_max_val, price)          
+        current_max_val = max(current_max_val, price)
+        print(current_max_val)          
         potential_profit = current_max_val - price          
         max_profit_val = max(potential_profit, max_profit_val)
 
