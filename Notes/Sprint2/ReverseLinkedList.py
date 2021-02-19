@@ -25,7 +25,7 @@ def reverse(head_of_list):
     previous_node = None
     next_node = None
 
-    while current_node:
+    while current_node: #is not None by default or is existing
         # set the next_node, preserving access
         next_node = current_node.next
 
