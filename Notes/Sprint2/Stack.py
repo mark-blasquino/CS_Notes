@@ -3,21 +3,6 @@
 #         self.data = data
 #         self.next = None
 
-
-class Stack:
-    def __init__(self):
-        self.items = []
-
-    def push(self, item):
-        self.items.append(item)
-
-    def pop(self):
-        if len(self.items) == 0:
-            return None
-        last_item = self.items.pop()
-        return last_item
-
-
 class LLStack:
     def __init__(self):
         self.top = None
@@ -32,7 +17,7 @@ class LLStack:
     
     def pop(self):
         # dont remove anything from an empty stack
-        if self.top is None:
+        if self.top is None: # sanity check
             return None
         
         old_top = self.top

@@ -7,6 +7,11 @@ As you write your methods, you should optimize for time on the `enqueue()` and
 `dequeue()` method calls.
 
 The Stack class that you will use has been provided to you.
+
+
+UPER
+*** create 2 stacks (input & output)
+*** to add - always add to input stack
 """
 class Stack:
     def __init__(self):
