@@ -32,3 +32,8 @@ def csBinarySearch(nums, target):
         else:
             max = mid - 1
     return -1
+
+my_nums = [1,3,4,6,7,12,26,90,104]
+my_target = 26
+
+print(csBinarySearch(my_nums, my_target))

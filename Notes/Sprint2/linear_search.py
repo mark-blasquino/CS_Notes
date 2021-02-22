@@ -11,14 +11,14 @@ def linear_search(arr, target):
 
 
 
-def linear_search(arr, item, current_index):
-    if current_index >= len(arr):
+def linear_search(arr, item, current_index): # recursive mode; broken/split  the problem
+    if current_index >= len(arr): # Base Case (don't need to keep searching)
         return -1
 
-    if arr[current_index] == item:
+    if arr[current_index] == item: # Base Case (don't need to keep searching)
         return current_index
 
-    return linear_search(arr, item, current_index + 1)
+    return linear_search(arr, item, current_index + 1) # next location / index --- this line is the recursive case, indicating for the function to keep going
 
     
 
