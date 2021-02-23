@@ -1,3 +1,5 @@
+### Finding Pivot
+
 """
 I was bored one day and decided to look at last names in the phonebook for my
 area.
@@ -35,16 +37,22 @@ list I came up was absolutely huge, so make sure your solution is efficient.
 ​
 *Note: you should be able to come up with a solution that has O(log n) time
 complexity.*
+
+### UPER ###
+
+- search problem
+    - Linear or better
+    - Sorting will loose the index
+    - Where is the first lower Alphabetical after the first item (prior alphabetical item than one in index 1)
 """
-​
-​
+
 def find_rotation_point(surnames):
     # get the first name, and use it to compare against all guesses
     first_surname = surnames[0]
     # create our search space
     floor_index = 0
     ceiling_index = len(surnames) - 1
-​
+
     while floor_index < ceiling_index:
         # make guesses, (specifically in the middle of our space)
         guess_index = (floor_index + ceiling_index) // 2
@@ -56,13 +64,12 @@ def find_rotation_point(surnames):
         # otherwise if guess is lower, move the ceiling up
         else:
             ceiling_index = guess_index
-​
         # if only two items left, return the lower item
+        
         if floor_index + 1 == ceiling_index:
             # the lower item, should be the floor
             return ceiling_index
-    
-​
+
 surnames = [
     'glover',
     'kennedy',
@@ -76,5 +83,4 @@ surnames = [
     'davenport',
     'farley',
 ]
-​
 print(find_rotation_point(surnames))

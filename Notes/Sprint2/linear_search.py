@@ -20,7 +20,9 @@ def linear_search(arr, item, current_index): # recursive mode; broken/split  the
 
     return linear_search(arr, item, current_index + 1) # next location / index --- this line is the recursive case, indicating for the function to keep going
 
-    
+
+# base case - don't keep going
+# recursive case -  keep going   
 
 
 
