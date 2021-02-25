@@ -33,3 +33,19 @@ def binaryTreeInOrderTraversal(root):
         res.append(root.value)
         res = res + binaryTreeInOrderTraversal(root.right)
     return res 
+
+# Other solution:
+def binaryTreeInOrderTraversal(root):
+    arr = []
+    def recursiveTraversal(curr):
+        
+        if curr.left is not None:
+            recursiveTraversal(curr.left)
+
+        arr.append(curr.value)
+
+        if curr.right is not None:
+            recursiveTraversal(curr.right)
+    
+    recursiveTraversal(root)
+    return arr
