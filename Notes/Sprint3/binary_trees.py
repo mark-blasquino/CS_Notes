@@ -1,3 +1,18 @@
+""" 
+In-Order:
+    - go left
+    - print
+    - go right
+Pre-Order
+    - print
+    - go right
+    - go left
+Post-Order
+    - go right
+    - go left
+    - print
+"""
+
 class BSTNode:
     def __init__(self, value):
         self.value = value
@@ -40,13 +55,14 @@ class BSTNode:
             else:
                 return self.right.search(target)
 
-
+    # In-order Traversal
     def print_tree(self):
+        # go left
         if self.left is not None:
             self.left.print_tree()
-
+        # do things to current node
         print(self.value)
-
+        # go right
         if self.right is not None:
             self.right.print_tree()
 
