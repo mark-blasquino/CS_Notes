@@ -1,5 +1,11 @@
 """ 
-given a string, return the number of 'lambdas' that can be constructed
+Given a string text, you need to use the characters of text to 
+form as many instances of the word "lambda" as possible.
+
+You can use each character in text at most once.
+
+Write a function that returns the maximum number of instances 
+of "lambda" that can be formed.
 """
 import sys
 
