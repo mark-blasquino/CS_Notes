@@ -30,3 +30,16 @@ def csFriendCircles(friendships):
                 queue.append(idx)
                 visited[idx] = 1
     return cnt
+
+ # CSPT16/Artem Solution
+def csFriendCircles(friendships):
+    # for each person in the class
+    # figure out what friend group they are part of
+    # keep track of all people you have seen in a visited set
+    # this set will be empty at first
+    # for each person (0 -> N)
+        # Traverse their friends
+            # (dft, bft)
+        # once you have completed the traversa,
+        # you have found a new friend group
+        # add 1 to some counter

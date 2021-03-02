@@ -1,3 +1,23 @@
+""" 
+Dictionary/Hash Table
+
+insert: O(1) mostly
+delete: O(1) mostly
+access: O(1)
+search: typically not used in dict 
+
+Hash
+    - consistent
+    - should be fast
+    - should take strings and convert to numbers
+
+take some string
+    convert num using Hash fn
+Store key, value at the number
+
+# modulo is a division process but returns the remainder instead
+"""
+
 # my_dict = {
 #     'apple': 'apple is a fruit',
 #     'banana': 'banana is a fruit',
@@ -8,7 +28,7 @@ class HashTable:
     def __init__(self, capacity):
         self.capacity = capacity
         self.storage = [None] * capacity            
-
+ 
     def my_hash(self, key):
         # do stuff to convert this str to a number
         bytes_str = key.encode()
@@ -48,3 +68,14 @@ my_dict.insert('tomato', 'no one can agree on tomato')
 my_dict.insert('peach', 'Definitely not a banana')
 
 print(my_dict.get('banana'))
+
+
+### function without class ###
+
+def my_hash(str, table_size):
+    bytes_str = str.encode()
+    bytes_sum = 0
+    for byte in bytes_str:
+        bytes_sum += byte
+
+    return bytes_sum % table_size

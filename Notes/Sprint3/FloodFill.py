@@ -1,7 +1,7 @@
 """An image is represented by a 2-D array of integers, each integer representing 
 the pixel value of the image (from 0 to 65535).
 
-Given a coordinate (sr, sc) representing the starting pixel (row and column) of 
+Given a coordinate (sr, sc) *start row/ start column* representing the starting pixel (row and column) of 
 the flood fill, and a pixel value newColor, "flood fill" the image.
 
 To perform a "flood fill", consider the starting pixel, plus any pixels connected 
@@ -63,3 +63,43 @@ class Solution:
             queue.append((currRow, currColumn - 1))
 
         return image
+
+# CSPT16/Artem Solution
+""" 
+Starting at a pixel,
+Find all pixels that we need to change
+
+get_neighbors for current_coord
+    Look up
+        down
+        left
+        right
+        check if each coord has the same value
+"""
+def flood_fill(image, sr, sc, new_color):
+    # Recursive DFS
+    def dfs(current_row, current_column):
+        # current_row, current_column combine to create a vertex
+        # change the current vertex, to a new color
+        original_color = image[current_row][current_column]
+        image[current_row][current_column] = new_color
+
+        # get all the neighbors
+        # look up, down, left, right & recurse on any neighbors
+        # look up
+        if current_row >= 1 and image[current_row - 1][current_column] == original_color:
+            dfs(current_row - 1, current_column)
+        
+        # look down
+        if current_row > len(image)-1 and image[current_row + 1][current_column] == original_color:
+            dfs(current_row + 1, current_column)
+        
+        # look left
+        if current_column >= 1 and image[current_row][current_column  - 1] == original_color:
+            dfs(current_row, current_column - 1)
+
+        # look right
+        if current_column < len(image[0]) - 1 and image[current_row][current_column  + 1] == original_color:
+            dfs(current_row, current_column + 1)
+    
+    dfs(sr, sc)
